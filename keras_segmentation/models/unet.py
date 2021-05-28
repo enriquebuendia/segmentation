@@ -72,7 +72,7 @@ def _unet(n_classes, encoder, l1_skip_conn=True, input_height=416,
     img_input, levels = encoder(
         input_height=input_height, input_width=input_width, channels=channels)
     [f1, f2, f3, f4, f5] = levels
-    activacion = 'relu'
+    activacion = 'tanh'
     o = f4
 
     o = (ZeroPadding2D((1, 1), data_format=IMAGE_ORDERING))(o)
